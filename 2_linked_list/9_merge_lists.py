@@ -1,3 +1,4 @@
+
 """
  Merge two linked lists
  head could be None as well for empty list
