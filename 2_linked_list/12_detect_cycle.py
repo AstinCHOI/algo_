@@ -14,9 +14,10 @@ A Node is defined as:
 def has_cycle(head):
     if head is None:
         return 0
-    
+
     while head.next is not None:
         if head.next == head.next.next:
             return 1
         head = head.next
-    
+
+    return 0
