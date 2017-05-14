@@ -53,3 +53,8 @@ static Node Insert(Node root, int value) {
 //     return root;
 // }
 
+//      4
+//    /   \
+//   2     7
+//  / \   /
+// 1   3 6
