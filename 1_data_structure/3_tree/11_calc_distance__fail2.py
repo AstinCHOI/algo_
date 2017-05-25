@@ -1,6 +1,5 @@
 
 # Timeout
-
 import sys
 sys.setrecursionlimit(10000)
 
@@ -24,7 +23,6 @@ def dist(a, b, visited, way, distance, up, s):
     # way.remove(way[-1])
     return dist(visited[up-1], b, visited, way, distance-1, up-1, s)
 
-
 n, q = map(int, input().split(' '))
 
 # Make Queue
@@ -41,7 +39,6 @@ for _ in range(n-1):
         tree_dict[b] = [a]
     else:
         tree_dict[b].append(a)
-
 
 # Calculate
 for _ in range(q):

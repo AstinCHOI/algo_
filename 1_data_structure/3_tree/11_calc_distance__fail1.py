@@ -1,7 +1,5 @@
 
-# First try
-# Not efficient
-
+# Timeout
 import sys
 sys.setrecursionlimit(1500)
 
@@ -10,7 +8,7 @@ class Node:
         self.data = data
         self.nodes = []
 
-        
+
 tree_dict = {}
 def dist(a, b, visited, distance, up):
     if a == b:
@@ -22,10 +20,8 @@ def dist(a, b, visited, distance, up):
 #    print(visited)
     return dist(visited[up-1], b, visited, distance-1, up-1)
 
-
 n, q = map(int, input().split(' '))
 
-# Make Queue
 for _ in range(n-1):
     a, b = map(int, input().split(' '))
     if a not in tree_dict.keys():
