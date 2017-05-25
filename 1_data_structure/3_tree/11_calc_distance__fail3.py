@@ -26,7 +26,6 @@ def dist(a, b, visited, way, distance, up):
     return dist(visited[up-1], b, visited, way, distance-1, up-1)
 
 n, q = map(int, input().split(' '))
-# Make Queue
 for _ in range(n-1):
     a, b = map(int, input().split(' '))
 
