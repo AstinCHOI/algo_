@@ -40,8 +40,8 @@ func main() {
 		// fmt.Scanf("%d", &k)
 		tmp, _ := in.ReadString('\n')
 		k, _ = strconv.Atoi(strings.TrimSpace(tmp))
-		node, _ := in.ReadString('\n')
-		nodeS := strings.Split(node, " ")
+		line, _ := in.ReadString('\n')
+		nodeS := strings.Split(strings.TrimSpace(line), " ")
 		nodeI := []int{}
 		for _, str := range nodeS {
 			num, _ := strconv.Atoi(str)
