@@ -1,11 +1,11 @@
 
 # Timeout
 import sys
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit((2**31)-1)
 
 tree_dict = {}
 tree_map = {}
-def dist(a, b, visited, way, distance, up, s):
+def dist(a, b, visited, distance, up, s):
     if not b:
         return s
     elif a in b:
@@ -15,13 +15,9 @@ def dist(a, b, visited, way, distance, up, s):
     for node in tree_dict[a]:
         if node not in visited:
             visited.append(node)
-            # way.append(node)
-            return dist(node, b, visited, way, distance+1, up, s)
+            return dist(node, b, visited, distance+1, up, s)
 
-    # print(visited)
-    # print(way)
-    # way.remove(way[-1])
-    return dist(visited[up-1], b, visited, way, distance-1, up-1, s)
+    return dist(visited[up-1], b, visited, distance-1, up-1, s)
 
 n, q = map(int, input().split(' '))
 
@@ -45,10 +41,8 @@ for _ in range(q):
     node = list(map(int, input().split(' ')))
     
     s = 0
-    for i in range(k):
+    for i in range(k-1):
         visited = [node[i]]
-        way = [node[i]]
-        # s += (node[i] * node[j] * dist(node[i], node[j], visited, 0, -1))
-        s += dist(node[i], node[i+1:], visited, way, 0, -1, 0)
+        s += dist(node[i], node[i+1:], visited, 0, -1, 0)
     kitty_cal = s % (10**9 + 7)
     print(kitty_cal)

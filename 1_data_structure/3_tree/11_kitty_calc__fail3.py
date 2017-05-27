@@ -22,7 +22,7 @@ def dist(a, b, visited, way, distance, up):
     
     # print(way)
     tree_map[way[0]][way[-1]] = tree_map[way[-1]][way[0]] = distance
-    way.remove(way[-1])
+    way = way[:-1] # way.remove(way[-1])
     return dist(visited[up-1], b, visited, way, distance-1, up-1)
 
 n, q = map(int, input().split(' '))
