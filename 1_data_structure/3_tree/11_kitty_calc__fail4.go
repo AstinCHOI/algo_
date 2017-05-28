@@ -37,7 +37,8 @@ func main() {
 	var k int
 	in := bufio.NewReader(os.Stdin)
 	for i := 0; i < q; i++ {
-		fmt.Scanf("%d", &k)
+		tmp, _ := in.ReadString('\n')
+		k, _ = strconv.Atoi(strings.TrimSpace(tmp))
 		line, _ := in.ReadString('\n')
 		nodeS := strings.Split(strings.TrimSpace(line), " ")
 		nodeI := []int{}
