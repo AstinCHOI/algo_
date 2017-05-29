@@ -1,19 +1,26 @@
 
 treeMap = {}
 n, q = map(int, input().split(' '))
-for _ in range(n-1):
+
+a, b = map(int, input().split(' '))
+if not a in treeMap.keys():
+    treeMap[a] = {}
+if not b in treeMap.keys():
+    treeMap[b] = {}
+treeMap[a][b] = 1
+treeMap[b][a] = 1
+
+for _ in range(n-2):
     a, b = map(int, input().split(' '))
     
     flagA = False
     if not a in treeMap.keys():
         treeMap[a] = {}
         flagA = True
-    
-    if not b in treeMap.keys():
+    else:
         treeMap[b] = {}
 
-    treeMap[a][b] = 1 
-    treeMap[b][a] = 1
+    treeMap[a][b], treeMap[b][a] = 1, 1
 
     if flagA:
         newX, oldX = a, b
