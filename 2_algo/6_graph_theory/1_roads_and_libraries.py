@@ -14,18 +14,50 @@ for _ in range(q):
         x, y = map(int, input().split())
         li1, li2 = cityMap[x], cityMap[y]
         if (li1 != li2):
-            li1.extend(li2)
+            li1.extend(li2) # cityMap[x].extend(li2)
             for node in li2:
                 cityMap[node] = li1
+            # print(cityMap)
+# 3 3 2 1
+# 1 2
+# 3 1
+# 2 3
+# 1st
+# li1 = [1], li2 = [2]
+# cityMap[1] = [1, 2]
+# li1 = [1, 2]
+# CityMap[2] = [1, 2]
 
+# 2nd
+# li1 = [3], li2 = [1, 2]
+# CityMap[3] = [3, 1, 2]
+# li1 = [3, 1, 2]
+# CityMap[1] = [3, 1, 2]
+# CityMap[2] = [3, 1, 2]
+
+# 3rd
+# skip due to li1 == li2
     if libraryCost < roadCost:
         print(n*libraryCost)
     else:
         cost = 0
-        
+# 1, 2, 3 -> (3, 1, 2)
         for lst in set(map(tuple, cityMap.values())):
             size = len(lst)
             if size > 0:
                 cost += libraryCost + ((size-1) * roadCost)
-
+                # cost = 2 + (2 * 1) = 4
         print(cost)
+
+# 2
+# 3 3 2 1
+# 1 2
+# 3 1
+# 2 3
+# 6 6 2 5
+# 1 3
+# 3 4
+# 2 4
+# 1 2
+# 2 3
+# 5 6
