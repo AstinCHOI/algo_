@@ -47,6 +47,7 @@ for _ in range(q):
             if size > 0:
                 cost += libraryCost + ((size-1) * roadCost)
                 # cost = 2 + (2 * 1) = 4
+                # 1 library, (size-1) roads
         print(cost)
 
 # 2
