@@ -1,5 +1,8 @@
 # http://blog.eairship.kr/249
 
+# Insert: O(log N)
+# Find/Delete Specific item : O(N)
+
 heap = []
 usedSize = 0
 
@@ -16,7 +19,7 @@ def insert(data):
     while (usedPos > 0 and heap[usedPos] < heap[parentPos]):
         heap[usedPos], heap[parentPos] = heap[parentPos], heap[usedPos]
         usedPos = parentPos
-        parentPos = int((usedPos-1)/2)
+        parentPos = int((usedPos - 1 ) / 2)
 
     usedSize = usedSize + 1
 
