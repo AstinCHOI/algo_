@@ -10,7 +10,7 @@ while i < size:
     i = i + 1
 
 # aaabccddd
-# abccddd
+# abc|c|ddd
 # ab <-> ddd
 # ab <-> d
 
