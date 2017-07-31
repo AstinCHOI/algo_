@@ -9,6 +9,11 @@ while i < size:
         size = len(s)
     i = i + 1
 
+# aaabccddd
+# abccddd
+# ab <-> ddd
+# ab <-> d
+
 if s:
     print(s)
 else:
