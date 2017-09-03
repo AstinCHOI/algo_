@@ -32,9 +32,8 @@ s = [[8,1,6,3,5,7,4,9,2],
      [4,3,8,9,5,1,2,7,6],
      [4,9,2,3,5,7,8,1,6]]
 #Print the minimum cost of converting 's' into a magic square
-r=[] 
+r = [0] * 8 
 for i in range(8):
-    r.append(0) 
     for j in range(9): 
         r[i] += abs( s[i][j] - p[int(j//3)][j%3] ) 
 print(min(r))
