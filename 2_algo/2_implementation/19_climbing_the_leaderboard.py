@@ -21,7 +21,7 @@ for ap in alice:
         mid = int((low + high) / 2)
         if ap < point[mid]:
             low = mid+1
-        elif ap > point[mid]: s
+        elif ap > point[mid]:
             high = mid-1
         else:
             break
