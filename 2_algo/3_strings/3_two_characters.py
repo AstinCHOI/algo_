@@ -11,19 +11,16 @@ sel = len(se)
 def check_two(a, b):
     val = a
     two = ''
-    for al in st:
-        if al == a or al == b:
-            two += al  
-    
     pre = ''
     flag = True
-
-    for one in two:
-        if pre == one:
-            flag = False
-            break
-        pre = one
-                
+    for al in st:
+        if (al == a or al == b):
+            two += al
+            if pre == al:
+                flag = False
+                break
+            pre = al
+        
     return len(two) if flag else 0
 
 m = [0]
