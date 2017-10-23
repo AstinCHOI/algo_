@@ -1,4 +1,10 @@
 # final
+## finally found it the reason why i has to go N+1 as below case
+# >>> (Input)
+# 1
+# 2
+# iv
+# sm
 T = int(input())
 
 for _ in range(T):
@@ -8,7 +14,7 @@ for _ in range(T):
         grid.append(sorted(input()))
 
     flag = True
-    for i in range(1, N):
+    for i in range(1, N+1):
         for j in range(1, N):
             if not ((ord(grid[i-1][j-1]) <= ord(grid[i-1][j])) and \
                 (ord(grid[j-1][i-1]) <= ord(grid[j][i-1]))):
@@ -22,7 +28,7 @@ for _ in range(T):
     else:
         print('NO')
 
-# 2nd
+## 2nd
 # T = int(input())
 
 # for _ in range(T):
@@ -52,7 +58,7 @@ for _ in range(T):
 #         print('NO')
 
 
-# 1st
+## 1st
 # T = int(input())
 # N = int(input())
 
